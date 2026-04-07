@@ -1,5 +1,5 @@
 # CASCADE
-**CASCADE: Content-Addressed Distributed KV Cache Storage for Tiered Data Architecture LLM Inference**
+**CASCADE: Content-Addressed Distributed KV Cache Storage for Tiered Data Architecture LLM Inference (Submitted SC'26)**
 
 ## Introduction
 CASCADE is a distributed KV cache management system designed for large-scale LLM inference on HPC systems.  
