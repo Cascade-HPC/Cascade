@@ -2,7 +2,7 @@
 **CASCADE: Content-Addressed Distributed KV Cache Storage for Tiered Data Architecture LLM Inference (Submitted SC'26)**
 
 ## Introduction
-CASCADE is a distributed KV cache management system designed for large-scale LLM inference on HPC systems.  
+CASCADE is a distributed KV cache management system designed for large-scale LLM inference on disaggregated architectures.  
 It integrates GPU HBM, host DRAM, and parallel file systems into a unified tiered memory hierarchy with cross-node KV cache sharing.  
 To efficiently support multi-node/GPU deployments, CASCADE introduces:
 - A unified tiered memory hierarchy with data placement and promotion,
@@ -15,10 +15,10 @@ To efficiently support multi-node/GPU deployments, CASCADE introduces:
 - Unified tiered storage hierarchy spanning GPU HBM, DRAM, and Lustre with tier promotion/demotion.
 - Content-addressed deduplication eliminates redundant KV blocks across the entire cluster.
 - Zero-copy RDMA transfers via Shadow Copy Buffers with FP16→INT8 compression.
-- Semantic-aware eviction protects prefix blocks.
-- Cold data cascades to Lustre via aggregated O_DIRECT writes.
-- Decoupled control-data architecture separates metadata synchronization from data movement.
-
+- Semantic-aware eviction protects prefix blocks through a dedicated registry and dedup map.
+- Cold data cascades to Lustre via aggregated O_DIRECT writes to avoid metadata contention.
+- Decoupled control-data architecture separates metadata synchronization from data movement for scalable orchestration.
+  
 ## Repository Structure
 ```
 CASCADE/
